@@ -1,56 +1,41 @@
-# growth_mindset.py
+import streamlit as st
 
-def show_intro():
-    print("🌱 Welcome to the Growth Mindset Reflector!")
-    print("This tool will help you shift from a fixed mindset to a growth mindset.")
-    print("Let's begin...\n")
+# Page setup
+st.set_page_config(page_title="Growth Mindset Challenge", layout="centered")
 
-def mindset_quiz():
-    questions = [
-        {
-            "fixed": "I give up when things get tough.",
-            "growth": "I try different strategies when I face difficulties."
-        },
-        {
-            "fixed": "I’m either good at something or I’m not.",
-            "growth": "I can improve with effort and practice."
-        },
-        {
-            "fixed": "I don’t like challenges.",
-            "growth": "Challenges help me grow and learn."
-        },
-        {
-            "fixed": "I avoid feedback.",
-            "growth": "I learn from feedback and use it to improve."
-        }
-    ]
+st.title("🌱 Growth Mindset Challenge")
+st.subheader("Empower Yourself Through Learning & Perseverance")
 
-    score = 0
+# What is Growth Mindset
+st.markdown("## 💡 What is a Growth Mindset?")
+st.write("""
+A **growth mindset** is the belief that your abilities and intelligence can be developed through effort, learning, and persistence. 
+This mindset, introduced by psychologist *Carol Dweck*, encourages embracing challenges and viewing failures as opportunities to grow.
+""")
 
-    for i, q in enumerate(questions, 1):
-        print(f"\nQuestion {i}:")
-        print(f"1️⃣ {q['fixed']}")
-        print(f"2️⃣ {q['growth']}")
-        choice = input("Which statement do you relate to more? (1 or 2): ")
+# Why Adopt It?
+st.markdown("## 🌟 Why Adopt a Growth Mindset?")
+st.markdown("""
+- 🚀 **Embrace Challenges**: Obstacles help you grow, not stop you.
+- ❌ **Learn from Mistakes**: Every failure is a step toward success.
+- 💪 **Persist Through Difficulties**: Keep pushing, results follow.
+- 🎉 **Celebrate Effort**: Effort is more important than just results.
+- 🧠 **Stay Curious**: Keep learning and stay open to change.
+""")
 
-        if choice == "2":
-            score += 1
+# How to Practice It
+st.markdown("## 🧭 How to Practice a Growth Mindset")
+st.markdown("""
+- 🎯 Set goals focused on learning and skills.
+- 📝 Reflect on what you learn from challenges.
+- 📢 Ask for feedback and use it to grow.
+- 🌞 Stay positive, and believe in your potential.
+""")
 
-    return score
+# Encouragement
+st.success("Remember: Your brain is like a muscle—the more you use it, the stronger it gets. Keep learning, keep growing!")
 
-def final_message(score):
-    print("\n✨ Reflection Result ✨")
-    if score == 4:
-        print("You're already practicing a strong growth mindset! Keep going! 🚀")
-    elif 2 <= score <= 3:
-        print("You're on the right path! Keep working on your mindset 💪")
-    else:
-        print("It’s never too late to start believing in growth. You got this! 🌟")
+# Footer
+st.markdown("---")
+st.caption("Created with ❤️ using Streamlit | Growth Mindset Challenge Project")
 
-def main():
-    show_intro()
-    score = mindset_quiz()
-    final_message(score)
-
-if __name__ == "__main__":
-    main()
